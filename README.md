@@ -56,7 +56,49 @@
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    float math, science, english, average;
+
+    // Input marks
+    printf("Enter marks in Math: ");
+    scanf("%f", &math);
+    printf("Enter marks in Science: ");
+    scanf("%f", &science);
+    printf("Enter marks in English: ");
+    scanf("%f", &english);
+
+    // Calculate average
+    average = (math + science + english) / 3.0;
+
+    // Determine grade using nested if-else
+    char grade;
+    if (average >= 90.0) {
+        grade = 'A';
+    } else {
+        if (average >= 75.0) {
+            grade = 'B';
+        } else {
+            if (average >= 50.0) {
+                grade = 'C';
+            } else {
+                grade = 'F';
+            }
+        }
+    }
+
+    // Display result
+    printf("Average Marks = %.2f\n", average);
+    printf("Grade = %c\n", grade);
+
+    return 0;
+}
+```
 # Output:
+<img width="639" height="392" alt="image" src="https://github.com/user-attachments/assets/2a741fda-71bb-4f05-b648-6d80c400c6e5" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -88,7 +130,24 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    int num = 15;  // given number
+    int i;
+
+    printf("Multiplication Table of %d:\n", num);
+    for(i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+
+    return 0;
+}
+```
 # Output:
+<img width="637" height="501" alt="image" src="https://github.com/user-attachments/assets/0fb1ae5f-9c43-4820-a7f0-f8f234e8416a" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -131,7 +190,40 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 7:   
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, i, flag = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        printf("%d is not a prime number.\n", num);
+        return 0;
+    }
+
+    // Check divisibility up to sqrt(num)
+    for (i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (flag == 0)
+        printf("%d is a prime number.\n", num);
+    else
+        printf("%d is not a prime number.\n", num);
+
+    return 0;
+}
+```
 # Output:
+<img width="631" height="388" alt="image" src="https://github.com/user-attachments/assets/ad91234a-4a6d-4538-a4d3-10edb9250694" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -179,7 +271,44 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    int i, j;
+
+    // Row 1
+    for (i = 1; i <= 5; i++) {
+        printf("%d", i);
+    }
+    printf("\n");
+
+    // Rows 2 to 4
+    for (i = 2; i <= 4; i++) {
+        for (j = 1; j <= 5; j++) {
+            if (j == 1) {
+                printf("%d", i);          // first column
+            } else if (j == 5) {
+                printf("%d", 6 - i);      // last column
+            } else {
+                printf(" ");              // spaces in between
+            }
+        }
+        printf("\n");
+    }
+
+    // Row 5
+    for (i = 5; i >= 1; i--) {
+        printf("%d", i);
+    }
+    printf("\n");
+
+    return 0;
+}
+```
 # Output:
+<img width="662" height="413" alt="image" src="https://github.com/user-attachments/assets/60c5e341-f4cb-466a-9566-6ab322861913" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -232,6 +361,37 @@ Thus, the program was implemented and executed successfully, and the required ou
   Decrease i by 1 and go back to Step 6.
 ### Step 8:
   Stop
+# Program:
+```
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    int rows = 8;  // total rows
+
+    for(i = 1; i <= rows; i++) {
+        // Ascending part
+        for(j = rows - i; j <= 7; j++) {
+            printf("%d ", j);
+        }
+
+        // Print 0
+        printf("0 ");
+
+        // Descending part
+        for(j = 7; j >= rows - i; j--) {
+            printf("%d ", j);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+# Output:
+<img width="635" height="462" alt="image" src="https://github.com/user-attachments/assets/2d27ed63-89a1-43e9-86b6-fe34dce15651" />
+
 # Result:
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
